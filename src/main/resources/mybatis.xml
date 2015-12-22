@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC 
+"-//mybatis.org//DTD config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- mybatis log output -->
+	<settings>
+		<setting name="logImpl" value="SLF4J" />
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+	<environments default="t-gwdb">
+	
+		<environment id="gwdb">
+			<!-- data source -->
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.OracleDriver" />
+				<property name="url" value="jdbc:oracle:thin:@xx.xx.xx.xx:1521:xxxx" />
+				<property name="username" value="name" />
+				<property name="password" value="pass" />
+				<property name="poolMaximumActiveConnections" value="20" />
+				<property name="poolMaximumIdleConnections" value="20" />
+				<property name="poolMaximumCheckoutTime" value="20000" />
+			</dataSource>
+		</environment>
+		
+		<environment id="t-gwdb">
+			<!-- data source -->
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.OracleDriver" />
+				<property name="url" value="jdbc:oracle:thin:@xx.xx.xx.xx:1521:xxxx" />
+				<property name="username" value="name" />
+				<property name="password" value="pass" />
+				<property name="poolMaximumActiveConnections" value="20" />
+				<property name="poolMaximumIdleConnections" value="20" />
+				<property name="poolMaximumCheckoutTime" value="20000" />
+			</dataSource>
+		</environment>
+		
+	</environments>
+
+	<!-- mapper file path -->
+	<mappers>
+		<mapper resource="mapper.xml"/>
+	</mappers>
+</configuration>
