@@ -53,6 +53,10 @@ task wrapper(type: Wrapper) {
     gradleVersion = '2.5'
 }
 
+task stage {
+  dependsOn build
+}
+
 task initDirs << {
   new File("$projectDir/src/main/java").mkdirs();
   new File("$projectDir/src/main/resources").mkdirs();
